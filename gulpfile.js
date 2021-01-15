@@ -19,13 +19,13 @@ const path = {
   src: {
     html: [source_folder + '/*.html', '!' + source_folder + '/_*.html'],
     fonts: source_folder + '/fonts/*.ttf',
-    img: source_folder + '/img/**/*.{jpg, jpeg, png, svg, gif, ico, webp}', // or /*.+(png|jpg|gif|ico|svg|webp)
+    img: source_folder + '/img/**/*.+(png|jpg|gif|ico|svg|webp)', // {jpg, jpeg, png, svg, gif, ico, webp} or /*.+(png|jpg|gif|ico|svg|webp)
     js: source_folder + '/scripts/main.js',
-    css: source_folder + '/styles/style.scss',
+    css: source_folder + '/styles/all.scss',
   },
   watch: {
     html: source_folder + '/**/*.html',
-    img: source_folder + '/img/**/*.{jpg, jpeg, png, svg, gif, ico, webp}', // or /*.+(png|jpg|gif|ico|svg|webp)
+    img: source_folder + '/img/**/*.+(png|jpg|gif|ico|svg|webp)', // {jpg, jpeg, png, svg, gif, ico, webp} or /*.+(png|jpg|gif|ico|svg|webp)
     js: source_folder + '/scripts/**/*.js/',
     css: source_folder + '/styles/**/*.scss',
   },
@@ -33,22 +33,22 @@ const path = {
 };
 
 // Get modules
-const { src, dest } = require('gulp');
-const gulp = require('gulp');
-const createServe = require('browser-sync').create();
-const fileinclude = require('gulp-file-include');
-const del = require('del');
-const scss = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const group_media = require('gulp-group-css-media-queries');
-const clean_css = require('gulp-clean-css');
-const rename = require('gulp-rename');
-const sourcemaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify-es').default;
-const imagemin = require('gulp-imagemin');
-const webp = require('gulp-webp');
-const webp_html = require('gulp-webp-html');
-const webp_css = require('gulp-webp-css');
+const { src, dest } = require('gulp'),
+  gulp = require('gulp'),
+  createServe = require('browser-sync').create(),
+  fileinclude = require('gulp-file-include'),
+  del = require('del'),
+  scss = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
+  group_media = require('gulp-group-css-media-queries'),
+  clean_css = require('gulp-clean-css'),
+  rename = require('gulp-rename'),
+  sourcemaps = require('gulp-sourcemaps'),
+  uglify = require('gulp-uglify-es').default,
+  imagemin = require('gulp-imagemin'),
+  webp = require('gulp-webp'),
+  webp_html = require('gulp-webp-html'),
+  webp_css = require('gulp-webp-css');
 
 // Create server
 function browserSync(params) {
@@ -88,7 +88,7 @@ function css() {
     .pipe(
       webp_css({
         webpClass: '.webp',
-        noWebpClass: '.no-webp'
+        noWebpClass: '.no-webp',
       })
     )
     .pipe(dest(path.build.css))
@@ -123,7 +123,7 @@ function images() {
   return src(path.src.img)
     .pipe(
       webp({
-        quality: 70
+        quality: 70,
       })
     )
     .pipe(dest(path.build.img))

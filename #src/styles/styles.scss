@@ -1,0 +1,169 @@
+@import '_mymixins';
+
+html {
+  font-size: 0.7rem;
+}
+
+body,
+.wrapper {
+  min-height: 100vh;
+  background-color: $body-bg;
+}
+.header {
+  @include linear-gradient(180deg);
+  & > .container{
+    background: url('../img/bg_NY.png') no-repeat 0 0 / contain;
+  }
+}
+.navbar-nav{
+  & .nav-link.nav-link{
+    color: #fff;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+.top-nav-bar {
+  background: #0f89c9;
+  background: linear-gradient(
+    to bottom,
+    #0f89c9 0%,
+    #1767a8 21%,
+    #1e4a8c 48%,
+    #213d7f 72%,
+    #22387a 100%
+  );
+  & .navbar-nav {
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    & .nav-link {
+      margin: 0 6px 0 0;
+      &:before{
+        content: '|';
+        margin: 0 8px 0 -10px;
+      }
+    }
+  }
+}
+.rss-link{
+  color: #fff;
+  & span{display: inline-block;vertical-align: bottom;}
+  &:hover{
+    color: #fff;
+  }
+}
+
+.tools-nav-bar{
+  & .btn-list{
+    display: flex;
+    font-size: 12px;
+    & .btn{
+      line-height: 1;
+      text-align-last: left;
+      display: flex;
+      align-items: center;
+      padding: 0px 4px;
+      & .material-icons{
+        color:$blue;
+        margin-left: 7px;
+      }
+    }
+  }
+}
+
+.breadcrumb{
+  background: none;
+  &-item+.breadcrumb-item::before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3px 0 3px 4px;
+    border-color: transparent transparent transparent #007bff;
+    margin-top: 7px;
+  }
+}
+main {
+//  background: #000;
+}
+
+.heading{
+  & .material-icons{
+    vertical-align: middle;
+  }
+  &-date{
+    color: #555;
+    & .material-icons{
+      font-size: 22px;
+      vertical-align: bottom;
+    }
+  }
+  &-meta{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    line-height: 1.7;
+    & li{
+      margin-right: 10px;
+    }
+  }
+}
+
+.info-panel{
+  font-size: 18px;
+  color: #000;
+  &-blue{
+    @include linear-gradient(180deg);
+    color: #fff;
+    font-size: 15px;
+    & .temperature{
+      font-size: 2.9rem;
+      &-archive{
+        & a{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
+
+.footer{
+  & .list-group-flush > .list-group-item{
+    border: 0;
+  }
+  & .list-group-item{
+    background: none;
+  }
+  & .copy{
+    border-top: 1px dashed #808080;
+    color: #808080;
+    font-size: 11px;
+  }
+}
+
+
+
+
+
+
+
+// h1 {
+//   color: #000;
+//   tab-size: 4;
+//   line-clamp: 5 '… (continued on next page)';
+// }
+
+// span {
+//   font-size: 28px;
+//   @media (max-width: 767px) {
+//     font-size: 15px;
+//   }
+// }
+// div {
+//   font-size: 39px;
+//   @media (max-width: 767px) {
+//     font-size: 20px;
+//   }
+// }

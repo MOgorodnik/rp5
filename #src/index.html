@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test task for vevide</title>
-    <link rel="stylesheet" href="css/style.min.css">
-</head>
-<body>
-    @@include('_header.html')
-    
-    <h1>main</h1>
-    <img src="img/866-1200x900.jpg" alt="desc">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+  </head>
+  <body>
+    <div class="wrapper d-flex flex-column">
+      @@include('_header.html')
+
+      <main class="flex-fill">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10">
+              @@include('_breadcrumb.html') 
+              
+              @@include('_heading.html')
+
+              @@include('_adds1.html')
+              
+              @@include('_info-panel-blue.html')
+              
+              @@include('_info-panel.html')
+
+            </div>
+            <div class="col-md-2 pt-5">banner adds</div>
+          </div>
+        </div>
+      </main>
+      @@include('_footer.html')
+    </div>
+
+    <!-- <h1>main</h1> -->
+    <!-- <img src="img/866-1200x900.jpg" alt="desc"> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/main.min.js"></script>
-</body>
+  </body>
 </html>

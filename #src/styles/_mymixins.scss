@@ -1,0 +1,10 @@
+  
+//   @mixin bg-gradient-variant($parent, $color, $ignore-warning: false) {
+//     background: $color linear-gradient(180deg, mix($body-bg, $color, 15%), $color) repeat-x !important;
+//   }
+  @mixin linear-gradient($direction: 90deg, $fromColor: #00a3de, $toColor: #22387a){
+    background-color: #22387a; // Old browsers
+    background-image:linear-gradient($direction,  $fromColor 0%, $toColor 100%);
+    // background-image:linear-gradient($direction,  $fromColor 0%,#0f74b2 31%,#195595 56%,#1f4283 76%, $toColor 100%);
+  }
+
